@@ -1,2 +1,13 @@
-<h1>Reviews#new</h1>
-<p>Find me in app/views/reviews/new.html.erb</p>
+<div class="container">
+  <div class="content">
+  <h1>Ajouter un nouveau commentaire</h1>
+  <hr>
+  <%= simple_form_for [@restaurant, @review ] do |f| %>
+    <%= f.input :content, label: 'Commentaire', error: 'Le commentaire est obligatoire, please specify one' %>
+    <%= f.input :rating, label: 'Note', collection: Review::RATINGS %>
+    <div class="text-center">
+      <%= f.button :submit, class: 'btn btn-primary' %>
+    </div>
+  <% end %>
+  </div>
+</div>

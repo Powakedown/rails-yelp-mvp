@@ -1,0 +1,32 @@
+<div class="container">
+  <h1><%= @restaurant.name %></h1>
+  <div class="buttons">
+    <%= link_to edit_restaurant_path do %>
+      <i class="fa fa-pencil fa-2x"></i>
+    <% end %>
+    <%= link_to @restaurant, method: :delete, data: { confirm: "Are you sure?" } do %>
+      <i class="fa fa-trash fa-2x"></i>
+    <% end %>
+    <%= link_to restaurants_path do %>
+      <i class="fa fa-home fa-2x"></i>
+    <% end %>
+
+  </div>
+  <hr>
+
+  <ul class="list-group">
+
+      <li class="list-group-item">
+        Adresse: <strong> <%= @restaurant.address %></strong>
+      </li>
+      <li class="list-group-item">
+        Numéro de téléphone <strong><%= @restaurant.phone_number %></strong>
+      </li>
+      <li class="list-group-item">
+        Catégorie: <strong><%= @restaurant.category %></strong>
+      </li>
+
+  </ul>
+
+</div>
+

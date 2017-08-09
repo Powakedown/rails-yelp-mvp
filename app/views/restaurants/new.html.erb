@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="content">
+  <h1>Ajouter un nouveau restaurant</h1>
+  <hr>
+  <%= simple_form_for(@restaurant, html: { class: 'form-horizontal' }) do |f| %>
+    <%= f.input :name, label: 'Name of the restaurant', error: 'Le nom est obligatoire, please specify one' %>
+    <%= f.input :address, label: 'Addresse' %>
+    <%= f.input :phone_number, label: 'Numéro de téléphone' %>
+    <%= f.input :category, label: 'Catégorie', collection: Restaurant::CATEGORIES %>
+    <div class="text-center">
+      <%= f.button :submit, class: 'btn btn-primary' %>
+    </div>
+  <% end %>
+  </div>
+</div>
